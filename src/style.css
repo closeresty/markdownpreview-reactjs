@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+    font-size: 12px;
+  }
+  
+  body {
+    box-sizing: border-box;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e7e8; 
+  }
+  
+  *,
+  *:before,
+  *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  .App {
+    display: grid;
+    grid-template-areas:
+      'title title'
+      'editor preview';
+    place-items: center;
+    gap: 20px;
+    padding: 50px 0;
+  }
+  
+  #title {
+    grid-area: title;
+    color: #63abf2; 
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    font-size: 5rem;
+    text-shadow: 2px 1px #212120; 
+  }
+  
+  #editor,
+  #preview {
+    width: 500px;
+    height: 600px;
+    padding: 24px 14px 14px 14px;
+    border: none;
+    border-radius: 3px;
+    border: 2px solid white; /* Add white border */
+  }
+  
+  #editor {
+    grid-area: editor;
+    background: #7bb2e8; /* Sublime Text editor background color */
+    box-shadow: 5px 5px #282923; /* Sublime Text editor box shadow */
+    color: #ffffff; /* Sublime Text editor text color */
+  }
+  
+  #preview {
+    grid-area: preview;
+    background: #7bb2e8; /* Sublime Text preview background color */
+    color: #ffffff; /* Sublime Text preview text color */
+    font-family: 'Molengo', sans-serif;
+    font-size: 1.2rem;
+    box-shadow: 5px 5px #282923; /* Sublime Text preview box shadow */
+    overflow-y: auto;
+  }
+  
+  a {
+    color: #66d9ef; /* Sublime Text link color */
+  }
+  
+  li {
+    margin-left: 3rem;
+  }
+  
+  blockquote {
+    margin-left: 2rem;
+    padding-left: 0.6rem;
+    border-left: 0.4rem solid #75715e; /* Sublime Text blockquote border color */
+  }
+  
+  @media only screen and (max-width: 1050px) {
+    .App {
+      grid-template-areas:
+        'title'
+        'editor'
+        'preview';
+    }
+  
+    #editor,
+    #preview {
+      width: 150vw;
+      height: 400px;
+    }
+  }
+  
